@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Adoption System - Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>🐾 Pet Adoption</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="adopted.html">Adopted Pets</a></li>
+                <li><button class="btn-admin" onclick="openAdminModal()">Admin</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="hero">
+            <h2>Find Your Perfect Companion</h2>
+            <p>Browse our available pets and give them a loving home</p>
+        </section>
+
+        <!-- Pets Grid Container -->
+        <section class="pets-container">
+            <h2>Available Pets</h2>
+            <div id="pets-grid" class="pets-grid">
+                <!-- Pets will be dynamically loaded here -->
+                <div class="loading">Loading pets...</div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Pet Adoption System. All rights reserved.</p>
+    </footer>
+
+    <!-- Admin Modal -->
+    <div id="admin-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeAdminModal()">&times;</span>
+            <h2>Add New Pet</h2>
+            <form id="add-pet-form" class="add-pet-form">
+                <div class="form-group">
+                    <label for="pet-name">Pet Name *</label>
+                    <input type="text" id="pet-name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="pet-breed">Breed *</label>
+                    <input type="text" id="pet-breed" name="breed" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="pet-age">Age *</label>
+                    <input type="number" id="pet-age" name="age" min="0" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="pet-description">Description</label>
+                    <textarea id="pet-description" name="description" rows="4"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="pet-image-url">Image URL</label>
+                    <input type="text" id="pet-image-url" name="image_url" placeholder="Optional - paste a link to an image">
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Add Pet</button>
+                    <button type="button" class="btn btn-secondary" onclick="closeAdminModal()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

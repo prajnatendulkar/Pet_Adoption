@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Details - Pet Adoption System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>🐾 Pet Adoption</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="adopted.html">Adopted Pets</a></li>
+                <li><button class="btn-admin" onclick="window.location.href='index.html'; setTimeout(() => openAdminModal(), 100);">Admin</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <a href="index.html" class="back-link">← Back to Home</a>
+            
+            <!-- Pet Details Section -->
+            <section id="pet-details" class="pet-details">
+                <!-- Pet information will be dynamically loaded here -->
+                <div class="loading">Loading pet details...</div>
+            </section>
+
+            <!-- Adoption Form Section -->
+            <section id="adoption-form-section" class="adoption-form-section" style="display: none;">
+                <h2>Adoption Form</h2>
+                <form id="adoption-form" class="adoption-form">
+                    <div class="form-group">
+                        <label for="adopter-name">Full Name *</label>
+                        <input type="text" id="adopter-name" name="adopter_name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="address">Address *</label>
+                        <textarea id="address" name="address" rows="4" required></textarea>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Submit Adoption Request</button>
+                        <button type="button" class="btn btn-secondary" onclick="closeAdoptionForm()">Cancel</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Success Message -->
+            <div id="success-message" class="success-message" style="display: none;">
+                <h3>✅ Adoption Request Submitted!</h3>
+                <p>Thank you for your interest. We will contact you soon.</p>
+                <a href="index.html" class="btn btn-primary">Return to Home</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Pet Adoption System. All rights reserved.</p>
+    </footer>
+
+    <script src="pet-details.js"></script>
+</body>
+</html>
+
